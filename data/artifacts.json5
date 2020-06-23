@@ -1,0 +1,46 @@
+{
+    // No outputPath, the output location is always c:/installer/gpii-app
+    "gpii-app": {
+        "type": "gpii.installer.artifact.githubRepoDownloader",
+        "options": {
+            "repo": "https://github.com/GPII/gpii-app",
+            "hash": "2befbfe96a58533a0954a39203dfc8a4b6b16bd5", // master
+            "output": "gpii-app"
+        }
+    },
+    // No outputPath, the output location is always c:/installer/
+    "gpii-wix-installer": {
+        "type": "gpii.installer.artifact.githubRepoDownloader",
+        "options": {
+            "repo": "https://github.com/GPII/gpii-wix-installer",
+            "hash": "b98474d53e2e5aa667ed610bb19414e56790593a",
+            "output": "gpii-wix-installer"
+        }
+    },
+    // For the rest of the artifacts, we need to provide the outputPath, always
+    // relative to the buildFolder, by default, c:/installer
+    "morphic-documorph-installer": {
+        "type": "gpii.installer.artifact.downloader",
+        "options": {
+            "downloadUrl": "https://github.com/javihernandez/morphic-documorph-installer/releases/download/0.1/documorph.msm",
+            "output": "documorph.msm",
+            "outputPath": "documorph.msm"
+        }
+    },
+    "gpii-filebeat-installer": {
+        "type": "gpii.installer.artifact.downloader",
+        "options": {
+            "downloadUrl": "https://github.com/stegru/gpii-filebeat-installer/releases/download/1.0.0/filebeat.msm",
+            "output": "filebeat.msm",
+            "outputPath": "filebeat.msm"
+        }
+    },
+    "resetToStandardFile": {
+        "type": "gpii.installer.artifact.downloader",
+        "options": {
+            "downloadUrl": "https://raw.githubusercontent.com/GPII/universal/master/testData/defaultSettings/defaultSettings.win32.json5",
+            "output": "defaultSettings.json5",
+            "outputPath": "staging/windows/resources/app/node_modules/gpii-universal/testData/defaultSettings/defaultSettings.json5"
+        }
+    }
+}
